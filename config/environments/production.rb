@@ -88,4 +88,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Added for devise installation
+  config.action_mailer.default_url_options = { host: 'fierce-springs-50542.herokuapp.com', port: 3000 }
 end
