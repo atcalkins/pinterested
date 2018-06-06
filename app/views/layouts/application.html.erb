@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Pintrested</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Pinteresting</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
 
-    <%= render 'home/header' %>
+<%= render 'home/navbar' %>
 
-  <div class="container">
 
-<% flash.each do |name, msg| %>
-  <%= content_tag(:div, msg, class: "alert alert-info") %>
-<% end %>
+<div class="container">
+  <%= render 'home/flashmessage' %>
+  <%= yield %>
+</div>
 
-    <%= yield %>
-  </div>
-  </body>
+
+</body>
 </html>
